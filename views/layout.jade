@@ -2,6 +2,15 @@ doctype html
 html
   head
     title= title
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="http://zeptojs.com/zepto.js")
+    link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+    script(src="/javascripts/materialize.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js")
   body
     block content
+
+   include ./footer.jade
+   <script>hljs.initHighlightingOnLoad();</script>

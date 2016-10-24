@@ -1,5 +1,59 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    - var name = 'Demo'
+    nav.green
+        div.nav-wrapper
+            a.brand-logo= name+'s'
+    div.container
+        h5.header API
+        div.card.horizontal
+            div.card-stacked
+                div.card-content
+                    p 简单包装一些接口，供测试使用
+                        ul 包括 
+                            each val, index in ['get', 'post', 'jsonp']
+                                em= val+' ,'
+                    只需传入字段 user,pw
+                    
+
+                div.card-action
+                    a(href="/api")
+                        - var flag = true
+                        - if(flag)
+                        点这里
+                    
+        - var friends = 10
+        case friends
+            when 0
+                p you have no friends
+            when 1
+                p you have a friend
+            default
+                p you have #{friends} friends
+
+        :markdown
+            ### Markdown 标题
+            这里使用的是 MarkDown 格式
+
+            1. 1
+            2. 2
+            3. 445
+
+            ```js
+                console.log(11)
+            ```
+
+        div.card-panel
+            div.collection
+                a(href="./api/get?user=guanxi&pw=hahah").collection-item.get get
+                a.collection-item.post post
+                a.collection-item.jsonp jsonp
+
+
+
+
+
+
+    script(src="/javascripts/ajax.js")
+    <script>hljs.initHighlightingOnLoad();</script>
